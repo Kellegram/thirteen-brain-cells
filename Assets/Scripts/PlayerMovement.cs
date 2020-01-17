@@ -33,9 +33,12 @@ public class PlayerMovement : MonoBehaviour
     */
     void RotateCharacter()
     {
-        EulerAngleVelocity = new Vector3(0, 100, 0);
-        Quaternion deltaRotation = Quaternion.Euler(EulerAngleVelocity * Input.GetAxis("Horizontal") * Time.deltaTime);
-        rb.MoveRotation(rb.rotation * deltaRotation);
+        if (Input.GetAxis("Vertical") < 0.1f && Input.GetAxis("Vertical") > -0.1f)
+        {
+            EulerAngleVelocity = new Vector3(0, 100, 0);
+            Quaternion deltaRotation = Quaternion.Euler(EulerAngleVelocity * Input.GetAxis("Horizontal") * Time.deltaTime);
+            rb.MoveRotation(rb.rotation * deltaRotation);
+        }
     }
 
 }
