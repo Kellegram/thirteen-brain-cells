@@ -51,7 +51,7 @@ public class PlayerMovement : MonoBehaviour
         //If not applying forward/backward force then decelerate the vehicle
         if (Input.GetAxis("Vertical") < 0.1f && Input.GetAxis("Vertical") > -0.1f)
         {
-            rb.velocity = rb.velocity * slowdownRate;
+            rb.velocity = new Vector3(rb.velocity.x * slowdownRate, rb.velocity.y, rb.velocity.z * slowdownRate);
         }
     }
 }
