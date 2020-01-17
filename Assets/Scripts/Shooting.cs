@@ -10,9 +10,6 @@ public class Shooting : MonoBehaviour
 
     public float bulletForce = 200f;
 
-    //This float isn't used yet but is shown in the editor. It may be used later.
-    public float damage = 10f;
-
     // Update is called once per frame
     void Update()
     {
@@ -25,6 +22,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        //Spawns a bullet at the firepoint object location and adds a force forward.
         GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
