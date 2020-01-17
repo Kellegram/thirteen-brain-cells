@@ -314,7 +314,7 @@ PrefabInstance:
     - target: {fileID: 523276287924643964, guid: 773a2e44e82315843aa920f1cd00068e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.155751
+      value: 2.29
       objectReference: {fileID: 0}
     - target: {fileID: 523276287924643964, guid: 773a2e44e82315843aa920f1cd00068e,
         type: 3}
@@ -365,6 +365,31 @@ PrefabInstance:
         type: 3}
       propertyPath: bulletForce
       value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 523276287924643840, guid: 773a2e44e82315843aa920f1cd00068e,
+        type: 3}
+      propertyPath: m_Drag
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 523276287924643840, guid: 773a2e44e82315843aa920f1cd00068e,
+        type: 3}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 523276287924643963, guid: 773a2e44e82315843aa920f1cd00068e,
+        type: 3}
+      propertyPath: slowdownRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 523276287924643963, guid: 773a2e44e82315843aa920f1cd00068e,
+        type: 3}
+      propertyPath: forwardMovement
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 523276287924643963, guid: 773a2e44e82315843aa920f1cd00068e,
+        type: 3}
+      propertyPath: turnRate
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 773a2e44e82315843aa920f1cd00068e, type: 3}
