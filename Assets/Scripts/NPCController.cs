@@ -32,25 +32,25 @@ public class NPCController : MonoBehaviour
             randomSpot = Random.Range(0, moveSpots.Length);
         }
 
-        float distance = Vector3.Distance(target.position, transform.position);
-
-        if (distance <= lookRadius)
+        if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
-            agent.SetDestination(transform.position);
+                agent.isStopped = true;
+                FaceTarget();
 
-            FaceTarget();
+                if (waitTillNextFire <= 0)
+                {
+                    Shoot();
+                    waitTillNextFire = 1;
+                }
 
-            if (waitTillNextFire <= 0)
-            {
-                Shoot();
-                waitTillNextFire = 1;
-            }
-
-            waitTillNextFire -= Time.deltaTime * fireSpeed;
-        }else
+                waitTillNextFire -= Time.deltaTime * fireSpeed;
+        }
+        else
         {
+            agent.isStopped = false;
             agent.SetDestination(moveSpots[randomSpot].position);
         }
+
     }
 
     void FaceTarget()
