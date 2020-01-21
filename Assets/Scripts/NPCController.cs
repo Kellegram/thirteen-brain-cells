@@ -1,36 +1,56 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
-
-    public Camera cam;
-
+    public Transform FirePoint;
+    public GameObject BulletPrefab;
     public NavMeshAgent agent;
     public float lookRadius = 10f;
-
+    public float fireSpeed = 2f;
+    float waitTillNextFire = 0f;
     Transform target;
+    public float bulletForce = 80f;
+
+    public Transform[] moveSpots;
+    private int randomSpot;
 
     private void Start()
     {
-        target = PlayerManager.instance.player.transform;
+        randomSpot = Random.Range(0, moveSpots.Length);
+;       target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
+        {
+            randomSpot = Random.Range(0, moveSpots.Length);
+        }
+
         float distance = Vector3.Distance(target.position, transform.position);
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
+            agent.SetDestination(transform.position);
 
             FaceTarget();
-            
-        }
 
-        
+            if (waitTillNextFire <= 0)
+            {
+                Shoot();
+                waitTillNextFire = 1;
+            }
+
+            waitTillNextFire -= Time.deltaTime * fireSpeed;
+        }else
+        {
+            agent.SetDestination(moveSpots[randomSpot].position);
+        }
     }
 
     void FaceTarget()
@@ -44,5 +64,14 @@ public class NPCController : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, lookRadius);
+    }
+
+    void Shoot()
+    {
+        //Spawns a bullet at the firepoint object location and adds a force forward.
+        GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+        Rigidbody rb = bullet.GetComponent<Rigidbody>();
+
+        rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
     }
 }
