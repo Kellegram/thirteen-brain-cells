@@ -8,24 +8,20 @@ public class ConstantMovement : MonoBehaviour
     public Rigidbody rb;
 
     //Public(editable) values------------------------------------------------------------
-    public float forwardMovement = 20f;//Modify how fast the tank accelerates
-    public float slowdownRate = 0.9f;//Modify how fast the tank slows down(logarithmic)
     public float maxTurnRate = 0.5f;//Modify how fast the tank turns
-    public float turnFactor = 1.0f;
-    public float velocityFactor = 5.0f;
+    public float turnFactor = 1.0f;//For modifying how much the turn rate is reduced by speed
+    public float velocityFactor = 5.0f;//For setting speed
     //-----------------------------------------------------------------------------------
 
     //Private values---------------------------------------------------------------------
     Vector3 EulerAngleVelocity;
     float turnRate = 0.5f;
-    bool moving = false;
     //-----------------------------------------------------------------------------------
 
     // Start is called before the first frame update
     void Start()
     {
         turnRate = maxTurnRate;
-        moving = false;
     }
 
     // Update is called once per frame
@@ -33,7 +29,7 @@ public class ConstantMovement : MonoBehaviour
     {
         RotateCharacter();
         //Moves character forward and backward
-        //using vertical input axes mapping in unity
+        //Set velocity
 
         if (Input.GetKey(KeyCode.W)) 
         {
@@ -86,7 +82,7 @@ public class ConstantMovement : MonoBehaviour
         {
             turnRate = maxTurnRate;
         }
-        if (turnRate <= 0f)//Placeholder(?), don't let the turnrate be negative
+        if (turnRate <= 0f)//Don't let the turnrate be negative
             turnRate = 0f;
     }
 }
