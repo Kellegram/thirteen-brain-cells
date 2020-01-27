@@ -5,6 +5,7 @@ public class NPCController : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject BulletPrefab;
+    public Transform Gun;
     public NavMeshAgent agent;
     public float lookRadius = 10f;
     public float fireSpeed = 2f;
@@ -27,7 +28,7 @@ public class NPCController : MonoBehaviour
     {
         
 
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
@@ -55,9 +56,10 @@ public class NPCController : MonoBehaviour
 
     void FaceTarget()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - Gun.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        Gun.rotation = Quaternion.Slerp(Gun.rotation, lookRotation, Time.deltaTime * 7f);
+       
     }
 
     private void OnDrawGizmosSelected()
