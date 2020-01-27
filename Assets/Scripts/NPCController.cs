@@ -28,7 +28,7 @@ public class NPCController : MonoBehaviour
     {
         
 
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f && agent.isStopped)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
