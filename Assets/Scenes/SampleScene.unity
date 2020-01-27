@@ -270,12 +270,6 @@ Transform:
   m_Father: {fileID: 1032661786}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &550200069 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6222437062148105532, guid: 4ac9d1892f4551945ad15fe323aff013,
-    type: 3}
-  m_PrefabInstance: {fileID: 1979279607}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -367,45 +361,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &888185714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6222437062457073439, guid: 4ac9d1892f4551945ad15fe323aff013,
-    type: 3}
-  m_PrefabInstance: {fileID: 1979279607}
-  m_PrefabAsset: {fileID: 0}
---- !u!195 &888185717 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 6774565937000190946, guid: 4ac9d1892f4551945ad15fe323aff013,
-    type: 3}
-  m_PrefabInstance: {fileID: 1979279607}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &888185721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 888185714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8330c76b28c884d9112564a20132e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FirePoint: {fileID: 550200069}
-  BulletPrefab: {fileID: 2376810981390829084, guid: 17a6528df53fdd744b062a361ed8bd6d,
-    type: 3}
-  Gun: {fileID: 1202713512}
-  agent: {fileID: 888185717}
-  lookRadius: 10
-  fireSpeed: 2
-  bulletForce: 80
-  moveSpots:
-  - {fileID: 1875503528}
-  - {fileID: 1308191669}
-  - {fileID: 1167255020}
-  - {fileID: 419411566}
-  - {fileID: 1377577386}
-  - {fileID: 351328309}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,32 +883,32 @@ PrefabInstance:
         type: 3}
       propertyPath: moveSpots.Array.data[0]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1875503528}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: moveSpots.Array.data[1]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1308191669}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: moveSpots.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1167255020}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: moveSpots.Array.data[3]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 419411566}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: moveSpots.Array.data[4]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1377577386}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: moveSpots.Array.data[5]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 351328309}
     - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
         type: 3}
       propertyPath: lookRadius
@@ -964,6 +919,36 @@ PrefabInstance:
       propertyPath: Gun
       value: 
       objectReference: {fileID: 1202713512}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[6]
+      value: 
+      objectReference: {fileID: 1875503528}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[7]
+      value: 
+      objectReference: {fileID: 1308191669}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[8]
+      value: 
+      objectReference: {fileID: 1167255020}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[9]
+      value: 
+      objectReference: {fileID: 419411566}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[10]
+      value: 
+      objectReference: {fileID: 1377577386}
+    - target: {fileID: 6774565937000190945, guid: 4ac9d1892f4551945ad15fe323aff013,
+        type: 3}
+      propertyPath: moveSpots.Array.data[11]
+      value: 
+      objectReference: {fileID: 351328309}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ac9d1892f4551945ad15fe323aff013, type: 3}
 --- !u!1 &2035992556
