@@ -7,6 +7,8 @@ public class Shooting : MonoBehaviour
     public Transform FirePoint;
     public GameObject BulletPrefab;
 
+    float waitTillNextFire = 0f;
+    public float fireSpeed = 2f;
     public float bulletForce = 200f;
 
     // Update is called once per frame
@@ -15,8 +17,13 @@ public class Shooting : MonoBehaviour
         //Fire1 Mapping will trigger the shoot function
         if(Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (waitTillNextFire <= 0)
+            {
+                Shoot();
+                waitTillNextFire = 1;
+            }
         }
+        waitTillNextFire -= Time.deltaTime * fireSpeed;
     }
 
     void Shoot()
