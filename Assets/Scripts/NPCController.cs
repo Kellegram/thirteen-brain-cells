@@ -3,6 +3,7 @@ using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
+    public FieldOfView fov;
     public Transform FirePoint;
     public GameObject BulletPrefab;
     public Transform Gun;
@@ -12,7 +13,6 @@ public class NPCController : MonoBehaviour
     float waitTillNextFire = 0f;
     Transform target;
     public float bulletForce = 80f;
-
     public Transform[] moveSpots;
     private int randomSpot;
 
@@ -26,7 +26,7 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
 
         if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
@@ -35,6 +35,8 @@ public class NPCController : MonoBehaviour
 
         if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
+            if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
+            {
                 agent.isStopped = true;
                 FaceTarget();
 
@@ -45,6 +47,11 @@ public class NPCController : MonoBehaviour
                 }
 
                 waitTillNextFire -= Time.deltaTime * fireSpeed;
+            }
+            else 
+            {
+                agent.isStopped = false;
+            }
         }
         else
         {
