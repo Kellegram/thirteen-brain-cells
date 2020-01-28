@@ -25,15 +25,15 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
 
         if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
+            if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
+            {
                 agent.isStopped = true;
                 FaceTarget();
 
@@ -44,6 +44,7 @@ public class NPCController : MonoBehaviour
                 }
 
                 waitTillNextFire -= Time.deltaTime * fireSpeed;
+            }
         }
         else
         {
