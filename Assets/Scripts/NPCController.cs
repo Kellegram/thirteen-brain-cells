@@ -18,7 +18,7 @@ public class NPCController : MonoBehaviour
     private void Start()
     {
         randomSpot = Random.Range(0, moveSpots.Length);
-;       target = PlayerManager.instance.player.transform;
+        target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
@@ -30,6 +30,7 @@ public class NPCController : MonoBehaviour
             randomSpot = Random.Range(0, moveSpots.Length);
         }
 
+        
         if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
             if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
