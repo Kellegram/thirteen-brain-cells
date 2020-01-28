@@ -3,16 +3,15 @@ using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
-    public FieldOfView fov;
     public Transform FirePoint;
     public GameObject BulletPrefab;
-    public Transform Gun;
     public NavMeshAgent agent;
     public float lookRadius = 10f;
     public float fireSpeed = 2f;
     float waitTillNextFire = 0f;
     Transform target;
     public float bulletForce = 80f;
+
     public Transform[] moveSpots;
     private int randomSpot;
 
@@ -26,17 +25,15 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        
 
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
 
         if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
-            if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
-            {
                 agent.isStopped = true;
                 FaceTarget();
 
@@ -47,11 +44,6 @@ public class NPCController : MonoBehaviour
                 }
 
                 waitTillNextFire -= Time.deltaTime * fireSpeed;
-            }
-            else 
-            {
-                agent.isStopped = false;
-            }
         }
         else
         {
@@ -63,10 +55,9 @@ public class NPCController : MonoBehaviour
 
     void FaceTarget()
     {
-        Vector3 direction = (target.position - Gun.position).normalized;
+        Vector3 direction = (target.position - transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        Gun.rotation = Quaternion.Slerp(Gun.rotation, lookRotation, Time.deltaTime * 7f);
-       
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
     private void OnDrawGizmosSelected()
@@ -82,5 +73,25 @@ public class NPCController : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
+
+        RaycastHit hit;
+        Vector3 rayOrigin = bullet.transform.position;
+        Vector3 rayDirection = bullet.transform.TransformDirection(Vector3.forward);
+        float rayRange = 1000, rayTime = 0.5f;
+        Debug.DrawRay(rayOrigin, rayDirection * rayRange, Color.magenta, rayTime);
+
+
+        if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayRange))
+        {
+        
+            if (hit.collider)
+            {
+                if (hit.collider.tag == "PlayerTank")
+                {
+                    Debug.Log("Bullet heading towards player");
+                }
+            }
+
+        }
     }
 }

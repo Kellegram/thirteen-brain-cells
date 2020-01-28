@@ -7,23 +7,18 @@ public class Shooting : MonoBehaviour
     public Transform FirePoint;
     public GameObject BulletPrefab;
 
-    float waitTillNextFire = 0f;
-    public float fireSpeed = 2f;
     public float bulletForce = 200f;
+
+  //  Vector3 fwd = FirePoint.transform.TransformDirection(Vector3.forward);
 
     // Update is called once per frame
     void Update()
     {
         //Fire1 Mapping will trigger the shoot function
-        if(Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-            if (waitTillNextFire <= 0)
-            {
-                Shoot();
-                waitTillNextFire = 1;
-            }
+            Shoot();
         }
-        waitTillNextFire -= Time.deltaTime * fireSpeed;
     }
 
     void Shoot()
@@ -33,5 +28,10 @@ public class Shooting : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
+
+
+
+
+
     }
 }
