@@ -67,7 +67,7 @@ public class ConstantMovement : MonoBehaviour
     }
 
     /*
-    The turning rate of the tank is dependant on whether the tank is moving or not. 
+    The turning rate of the tank is dependent on whether the tank is moving or not. 
     This function recalculates the turn rate
      */
     void CalcTurnRate()
@@ -75,14 +75,17 @@ public class ConstantMovement : MonoBehaviour
         //Calculate how fast the tank should turn
         //The faster it goes, the slower it turns
         if (rb.velocity.magnitude != 0)//Don't divide by 0
-            turnRate = turnFactor / rb.velocity.magnitude;
+            turnRate = turnFactor / velocityFactor;
 
         //Prevent the tank from turning faster while moving than it can when standing
         if (turnRate > maxTurnRate)
         {
             turnRate = maxTurnRate;
         }
-        if (turnRate <= 0f)//Don't let the turnrate be negative
+        if (turnRate <= 0f)//Don't let the turn rate be negative
             turnRate = 0f;
+
+
+
     }
 }
