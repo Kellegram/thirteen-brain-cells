@@ -3,37 +3,43 @@ using UnityEngine.AI;
 
 public class NPCController : MonoBehaviour
 {
+    [Header("Prefab Objects")]
     public Transform FirePoint;
     public GameObject BulletPrefab;
     public NavMeshAgent agent;
-    public float lookRadius = 10f;
+    public Transform[] moveSpots;
+    [Space(10)]
+
+    [Header("NPC Attributes")]
+    public float lookRadius = 35f;
     public float fireSpeed = 2f;
+    public float bulletForce = 80f;
+    [Space(20)]
+    //Not public
     float waitTillNextFire = 0f;
     Transform target;
-    public float bulletForce = 80f;
-
-    public Transform[] moveSpots;
     private int randomSpot;
 
     private void Start()
     {
         randomSpot = Random.Range(0, moveSpots.Length);
-;       target = PlayerManager.instance.player.transform;
+        target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 5f)
+        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
 
+        
         if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
         {
+            if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
+            {
                 agent.isStopped = true;
                 FaceTarget();
 
@@ -44,6 +50,7 @@ public class NPCController : MonoBehaviour
                 }
 
                 waitTillNextFire -= Time.deltaTime * fireSpeed;
+            }
         }
         else
         {
@@ -53,6 +60,9 @@ public class NPCController : MonoBehaviour
 
     }
 
+    /*
+     * FaceTarget() turns the NPCs gun towards the player
+     */
     void FaceTarget()
     {
         Vector3 direction = (target.position - transform.position).normalized;
@@ -60,12 +70,10 @@ public class NPCController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, lookRadius);
-    }
 
+    /*
+     * Shoot() fires a bullet in a straight line, then detects whether or it's heading towards the player.
+     */
     void Shoot()
     {
         //Spawns a bullet at the firepoint object location and adds a force forward.
@@ -74,12 +82,14 @@ public class NPCController : MonoBehaviour
 
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
 
+        //////////////////////////////////////////////////////
+        // Raycast that detects what object a bullet will hit
+        //////////////////////////////////////////////////////
         RaycastHit hit;
         Vector3 rayOrigin = bullet.transform.position;
         Vector3 rayDirection = bullet.transform.TransformDirection(Vector3.forward);
         float rayRange = 1000, rayTime = 0.5f;
         Debug.DrawRay(rayOrigin, rayDirection * rayRange, Color.magenta, rayTime);
-
 
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayRange))
         {

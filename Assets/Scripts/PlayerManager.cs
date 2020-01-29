@@ -13,6 +13,10 @@ public class PlayerManager : MonoBehaviour
         instance = this;
     }
     #endregion
-
+    
     public GameObject player;
+    public GameObject enemy; 
+
+    
+    public int NumberThatIsANumeralObjectWhereinANumberResidesInThisIntegerThatStoresANumberEitherASmallNumberOrALargeNumberOrAnywhereInbetweenThankfullyThereAreVariableTypesThatStoreNumbersLikeIntegerOrFloatOrDoubleOrEvenStringIfYoureWillingInThatCaseItMustBeAVeryLongNumberIfYoureWillingToUsingStringWowIlikeThatYouCanUseLongAndNonDescriptiveVariableNamesInCSharpItsVeryHelpfulForDevelopersWhoWouldLikeToNotKnowAnythingAboutTheInstanceOfTheObjectTheyreTryingToCall = 6;
 }
