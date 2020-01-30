@@ -36,8 +36,8 @@ public class NPCController : MonoBehaviour
         }
 
         
-        if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
-        {
+       // if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
+      //  {
             if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
             {
                 agent.isStopped = true;
@@ -51,11 +51,16 @@ public class NPCController : MonoBehaviour
 
                 waitTillNextFire -= Time.deltaTime * fireSpeed;
             }
-        }
+      //  }
         else
         {
             agent.isStopped = false;
             agent.SetDestination(moveSpots[randomSpot].position);
+        }
+
+        if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().followTarget)
+        {
+            agent.SetDestination(target.position);
         }
 
     }

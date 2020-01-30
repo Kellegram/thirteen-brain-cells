@@ -10,7 +10,7 @@ public class FieldOfViewEditor : Editor
         FieldOfView fov = (FieldOfView)target;
         Handles.color = Color.white;
         Handles.DrawWireDisc(fov.transform.position, Vector3.up, fov.viewRadius);
-
+        Handles.DrawWireDisc(fov.transform.position, Vector3.up, fov.followRadius);
         if (fov.attackTarget == true)
         {
             Handles.DrawLine(fov.transform.position, fov.visibleTarget.position);
