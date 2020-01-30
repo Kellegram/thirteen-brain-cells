@@ -11,7 +11,6 @@ public class NPCController : MonoBehaviour
     [Space(10)]
 
     [Header("NPC Attributes")]
-    public float lookRadius = 35f;
     public float fireSpeed = 2f;
     public float bulletForce = 80f;
     [Space(20)]
@@ -22,46 +21,75 @@ public class NPCController : MonoBehaviour
 
     private void Start()
     {
+        //When the game starts, pick a random number between 0 and moveSpots.Length
         randomSpot = Random.Range(0, moveSpots.Length);
+
+        //The target is a transform of the player object (assigned in the PlayerManager in the Editor)
         target = PlayerManager.instance.player.transform;
+
+        //agent is a NavMeshAgent who can navigate around a nav mesh.
+        //GetComponent searches for the NavMeshAgent component assigned to this object.
         agent = GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        //SET RANDOM POSITION FOR NPC TO MOVE TO
         if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, moveSpots.Length);
         }
-
+        ///////////////////////////////////////////
         
-       // if (target && Vector3.Distance(target.position, transform.position) <= lookRadius)
-      //  {
-            if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget)
-            {
-                agent.isStopped = true;
-                FaceTarget();
+       
+        if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
+        {
+            //Stop agent from moving
+            agent.isStopped = true;
 
-                if (waitTillNextFire <= 0)
-                {
-                    Shoot();
-                    waitTillNextFire = 1;
-                }
+            //Face the target
+            FaceTarget();
 
-                waitTillNextFire -= Time.deltaTime * fireSpeed;
+            //FIRE RATE LIMIT
+            if (waitTillNextFire <= 0)
+            { 
+                Shoot();
+                waitTillNextFire = 1;
             }
-      //  }
+
+            //FIRESPEED IS A PUBLIC VARIABLE SET IN EDITOR TO LIMIT FIRE RATE.
+            waitTillNextFire -= Time.deltaTime * fireSpeed;
+        }
+        else if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().followTarget) //IF PLAYER IS IN FOLLOW RANGE
+        {
+            //Make sure player is not stopped
+            agent.isStopped = false;
+
+            //GOTO PLAYER POS
+            agent.SetDestination(target.position);
+        }
+        else if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
+        {
+            //Make sure player is not stopped
+            agent.isStopped = false;
+
+            //GO TO LAST POSITION OF PLAYER
+            agent.SetDestination(PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos);
+        }
         else
         {
+            //IF WANDERING, SET LASTPOS TO 0
+            PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos = Vector3.zero;
+
+            //Make sure player is not stopped
             agent.isStopped = false;
+
+            //Move NPC to random position set at beginning of Update()
             agent.SetDestination(moveSpots[randomSpot].position);
         }
 
-        if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().followTarget)
-        {
-            agent.SetDestination(target.position);
-        }
+
 
     }
 
@@ -110,3 +138,4 @@ public class NPCController : MonoBehaviour
         }
     }
 }
+
