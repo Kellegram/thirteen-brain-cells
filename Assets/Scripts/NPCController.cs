@@ -5,6 +5,7 @@ public class NPCController : MonoBehaviour
 {
     [Header("Prefab Objects")]
     public Transform FirePoint;
+    public Transform Gun;
     public GameObject BulletPrefab;
     public NavMeshAgent agent;
     public Transform[] moveSpots;
@@ -43,7 +44,7 @@ public class NPCController : MonoBehaviour
         ///////////////////////////////////////////
         
        
-        if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
+        if (this.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
         {
             //Stop agent from moving
             agent.isStopped = true;
@@ -61,7 +62,7 @@ public class NPCController : MonoBehaviour
             //FIRESPEED IS A PUBLIC VARIABLE SET IN EDITOR TO LIMIT FIRE RATE.
             waitTillNextFire -= Time.deltaTime * fireSpeed;
         }
-        else if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().followTarget) //IF PLAYER IS IN FOLLOW RANGE
+        else if (this.GetComponent<FieldOfView>().followTarget) //IF PLAYER IS IN FOLLOW RANGE
         {
             //Make sure player is not stopped
             agent.isStopped = false;
@@ -69,18 +70,18 @@ public class NPCController : MonoBehaviour
             //GOTO PLAYER POS
             agent.SetDestination(target.position);
         }
-        else if (PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
+        else if (this.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, this.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
         {
             //Make sure player is not stopped
             agent.isStopped = false;
 
             //GO TO LAST POSITION OF PLAYER
-            agent.SetDestination(PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos);
+            agent.SetDestination(this.GetComponent<FieldOfView>().lastPos);
         }
         else
         {
             //IF WANDERING, SET LASTPOS TO 0
-            PlayerManager.instance.enemy.GetComponent<FieldOfView>().lastPos = Vector3.zero;
+            this.GetComponent<FieldOfView>().lastPos = Vector3.zero;
 
             //Make sure player is not stopped
             agent.isStopped = false;
@@ -98,9 +99,9 @@ public class NPCController : MonoBehaviour
      */
     void FaceTarget()
     {
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - Gun.transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+        Gun.transform.rotation = Quaternion.Slerp(Gun.transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
 
