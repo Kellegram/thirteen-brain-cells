@@ -6,6 +6,8 @@ TagManager:
   tags:
   - PlayerTank
   - Enemy
+  - Spawnpoint
+  - Navpoint
   layers:
   - Default
   - TransparentFX

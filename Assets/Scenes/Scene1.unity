@@ -343,7 +343,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 1.3333334
+  m_VoxelSize: 0.33333334
   m_BuildHeightMesh: 0
   m_NavMeshData: {fileID: 23800000, guid: be9314efc6e8a8e4f9066757096fd156, type: 2}
 --- !u!4 &1318126284
@@ -651,6 +651,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8910923084569849261, guid: 4f9c88d02fc2a874c89517a1f7716f5e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0baaa300e94fd07478ea46bed43785e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4f9c88d02fc2a874c89517a1f7716f5e, type: 3}
 --- !u!1001 &6786845427651581662
