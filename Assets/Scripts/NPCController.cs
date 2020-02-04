@@ -85,7 +85,10 @@ public class NPCController : MonoBehaviour
             agent.isStopped = false;
 
             //GOTO PLAYER POS
-            agent.SetDestination(target.position);
+            if (target != null)
+            {
+                agent.SetDestination(target.position);
+            }
         }
         else if (this.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, this.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
         {

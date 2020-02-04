@@ -8,14 +8,14 @@ public class ConstantMovement : MonoBehaviour
     public Rigidbody rb;
 
     //Public(editable) values------------------------------------------------------------
-    public float maxTurnRate = 0.5f;//Modify how fast the tank turns
-    public float turnFactor = 1.0f;//For modifying how much the turn rate is reduced by speed
-    public float velocityFactor = 5.0f;//For setting speed
+    public float maxTurnRate = 1.0f;//Modify how fast the tank turns
+    public float turnFactor = 25.0f;//For modifying how much the turn rate is reduced by speed
+    public float velocityFactor = 20.0f;//For setting speed
     //-----------------------------------------------------------------------------------
 
     //Private values---------------------------------------------------------------------
     Vector3 EulerAngleVelocity;
-    float turnRate = 0.5f;
+    float turnRate = 1.0f;
     //-----------------------------------------------------------------------------------
 
     // Start is called before the first frame update
@@ -31,17 +31,19 @@ public class ConstantMovement : MonoBehaviour
         //Moves character forward and backward
         //Set velocity
 
-        if (Input.GetKey(KeyCode.W)) 
+        if (Input.GetKey(KeyCode.W))
         {
-            rb.velocity = transform.forward * velocityFactor;
+            Vector3 xzTransform = transform.forward * velocityFactor;
+            rb.velocity = new Vector3(xzTransform.x, rb.velocity.y, xzTransform.z);
         }
-        else if(Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
-            rb.velocity = transform.forward * velocityFactor * (-1);
+            Vector3 xzTransform = -transform.forward * velocityFactor;
+            rb.velocity = new Vector3(xzTransform.x, rb.velocity.y, xzTransform.z);
         }
         else
         {
-            rb.velocity = new Vector3(0.0f, 0.0f, 0.0f);
+            rb.velocity = new Vector3(0.0f, rb.velocity.y, 0.0f);
         }
 
         //If the tank is moving, only then run these functions
@@ -67,7 +69,7 @@ public class ConstantMovement : MonoBehaviour
     }
 
     /*
-    The turning rate of the tank is dependant on whether the tank is moving or not. 
+    The turning rate of the tank is dependent on whether the tank is moving or not. 
     This function recalculates the turn rate
      */
     void CalcTurnRate()
@@ -75,14 +77,14 @@ public class ConstantMovement : MonoBehaviour
         //Calculate how fast the tank should turn
         //The faster it goes, the slower it turns
         if (rb.velocity.magnitude != 0)//Don't divide by 0
-            turnRate = turnFactor / rb.velocity.magnitude;
+            turnRate = turnFactor / velocityFactor;
 
         //Prevent the tank from turning faster while moving than it can when standing
         if (turnRate > maxTurnRate)
         {
             turnRate = maxTurnRate;
         }
-        if (turnRate <= 0f)//Don't let the turnrate be negative
+        if (turnRate <= 0f)//Don't let the turn rate be negative
             turnRate = 0f;
     }
 }

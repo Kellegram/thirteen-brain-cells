@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 5696130683540611078}
   m_Layer: 0
   m_Name: EnemyTank
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,9 +324,9 @@ MonoBehaviour:
   BulletPrefab: {fileID: 2376810981390829084, guid: 17a6528df53fdd744b062a361ed8bd6d,
     type: 3}
   agent: {fileID: 1227423856738398036}
-  moveSpots: []
-  fireSpeed: 1
+  fireSpeed: 0.5
   bulletForce: 80
+  navPoints: []
 --- !u!114 &1227423856738398038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac6cfbb369ef2b6479c6e8ea82c308ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 50
+  attackRadius: 75
   followRadius: 100
   targetMask:
     serializedVersion: 2
