@@ -70,7 +70,8 @@ public class NPCController : MonoBehaviour
 
             //FIRE RATE LIMIT
             if (waitTillNextFire <= 0)
-            { 
+            {
+                FindObjectOfType<AudioManager>().Play("FireSound");
                 Shoot();
                 waitTillNextFire = 1;
             }

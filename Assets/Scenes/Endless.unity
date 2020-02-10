@@ -208,7 +208,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &472621068
 GameObject:
@@ -329,7 +329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 142.302, y: -42.313995, z: -90}
 --- !u!1 &872301115
 GameObject:
@@ -420,8 +420,67 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 41.717003, y: -18.402, z: 14.070001}
+--- !u!1 &894293591
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 894293593}
+  - component: {fileID: 894293592}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &894293592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894293591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2da15aad64b454086309cbc0f7e6ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: FireSound
+    clip: {fileID: 8300000, guid: 1b9e10c43341c44459deeec5d118dad1, type: 3}
+    volume: 0.639
+    pitch: 1
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: c54db71a0f4efa148a343581454b0613, type: 3}
+    volume: 0.557
+    pitch: 1
+    source: {fileID: 0}
+  - name: explosion
+    clip: {fileID: 8300000, guid: f11ff297ba527254c823a2217f1cb880, type: 3}
+    volume: 0.557
+    pitch: 1
+    source: {fileID: 0}
+--- !u!4 &894293593
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 894293591}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &995302809
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,7 +637,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1113509040
 GameObject:
@@ -694,7 +753,7 @@ PrefabInstance:
     - target: {fileID: 2123563799913059183, guid: 85b4fe6840207dc43972d11b3ef5d26a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2123563799913059183, guid: 85b4fe6840207dc43972d11b3ef5d26a,
         type: 3}
@@ -824,7 +883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 62.387005, y: 0, z: 0}
 --- !u!1 &2123327437
 GameObject:
@@ -915,7 +974,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 40.654003, y: 39.742, z: -6.727}
 --- !u!1001 &7028140447911984681
 PrefabInstance:
@@ -1032,7 +1091,7 @@ PrefabInstance:
     - target: {fileID: 7687259169826351082, guid: ab735ce4d13f7084a92d45a818cbde25,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7687259169826351082, guid: ab735ce4d13f7084a92d45a818cbde25,
         type: 3}
@@ -3302,6 +3361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Navpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 7725811595951682199, guid: ab735ce4d13f7084a92d45a818cbde25,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab735ce4d13f7084a92d45a818cbde25, type: 3}

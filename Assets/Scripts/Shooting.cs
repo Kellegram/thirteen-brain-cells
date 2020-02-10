@@ -33,6 +33,7 @@ public class Shooting : MonoBehaviour
         {
             if (waitTillNextFire <= 0)
             {
+                FindObjectOfType<AudioManager>().Play("FireSound");
                 Shoot();
                 waitTillNextFire = 1;
             }
@@ -54,13 +55,13 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
+        
         //Spawns a bullet at the firepoint object location and adds a force forward.
         GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
 
-
-
+        
     }
 }
