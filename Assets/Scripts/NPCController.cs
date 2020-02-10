@@ -20,6 +20,7 @@ public class NPCController : MonoBehaviour
     float waitTillNextFire = 0f;
     Transform target;
     private int randomSpot;
+    [HideInInspector]
     public List<Transform> navPoints;
     GameObject map;
 
@@ -58,8 +59,6 @@ public class NPCController : MonoBehaviour
         {
             randomSpot = Random.Range(0, navPoints.Count);
         }
-        ///////////////////////////////////////////
-        
        
         if (this.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
         {

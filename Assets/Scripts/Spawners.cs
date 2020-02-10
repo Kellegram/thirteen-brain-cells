@@ -50,7 +50,15 @@ public class Spawners : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    /*
+    Update()
+    is called once per frame.
+
+    This function is used to calculate the next wave. Once the enemy count is less than zero (meaning all the enemies have died),
+    the wave number is increased by 1, and depending on certain conditions, the wave number is calculated.
+
+    Once the wave is calculated, that number of enemies is spawned.
+    // */
     void Update()
     {
         if (enemies.Count <= 0)
@@ -73,9 +81,17 @@ public class Spawners : MonoBehaviour
         }
     }
 
+    /*
+    EnemyDeathCheck()
+    function will loop through all of the enemies in the list, and remove
+    them if their value is null. If the value of the enemy is null, the enemy
+    will be removed from the list.
+
+    This function is needed because c# does not automatically remove null objects from
+    lists.
+    // */
     void EnemyDeathCheck()
     {
-        //checks whether an enemy has been killed and reduces the size of the enemies list
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] == null)

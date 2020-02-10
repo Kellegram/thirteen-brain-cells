@@ -12,6 +12,14 @@ public class BulletCollision : MonoBehaviour
         Destroy(gameObject, 2f);
     }
 
+    /*
+    OnTriggerEnter()
+    in this script will detect when the bullet collides with an object.
+    if the object contains a PlayerHealth component. If it does, it will
+    reduce the value of the health by the damage variable.
+
+    The bullet (gameObject) is then destroyed immediately.
+    //*/
     private void OnTriggerEnter(Collider other)
     {
         //If the bullet hit a player, this will detect that
@@ -21,7 +29,8 @@ public class BulletCollision : MonoBehaviour
             playerHealth.ReduceHealth(damage);
         }
 
-        //Instantiate(HitEffect, transform.position, Quaternion.identity);
+        
+        //Instantiate(HitEffect, transform.position, Quaternion.identity); (placeholder for a hit explosion or effect)
 
         //Destroy the bullet
         Destroy(gameObject);
