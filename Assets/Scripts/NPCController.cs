@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
+using System.Collections.Generic;
+using System.Linq;
 
 public class NPCController : MonoBehaviour
 {
@@ -8,7 +10,6 @@ public class NPCController : MonoBehaviour
     public Transform Gun;
     public GameObject BulletPrefab;
     public NavMeshAgent agent;
-    public Transform[] moveSpots;
     [Space(10)]
 
     [Header("NPC Attributes")]
@@ -19,14 +20,30 @@ public class NPCController : MonoBehaviour
     float waitTillNextFire = 0f;
     Transform target;
     private int randomSpot;
+    public List<Transform> navPoints;
+    GameObject map;
 
     private void Start()
     {
-        //When the game starts, pick a random number between 0 and moveSpots.Length
-        randomSpot = Random.Range(0, moveSpots.Length);
+        map = PlayerManager.instance.map;
 
         //The target is a transform of the player object (assigned in the PlayerManager in the Editor)
         target = PlayerManager.instance.player.transform;
+        
+        //Add all navpoints when enemy is spawned
+        Transform[] allChildren = map.GetComponentsInChildren<Transform>();
+
+        foreach (Transform child in allChildren)
+        {
+            if (child.gameObject.tag == "Navpoint")
+            {
+                navPoints.Add(child);
+            }
+        }
+
+        //When the game starts, pick a random number between 0 and navPoints.Count
+
+        randomSpot = Random.Range(0, navPoints.Count);
 
         //agent is a NavMeshAgent who can navigate around a nav mesh.
         //GetComponent searches for the NavMeshAgent component assigned to this object.
@@ -37,9 +54,9 @@ public class NPCController : MonoBehaviour
     void Update()
     {
         //SET RANDOM POSITION FOR NPC TO MOVE TO
-        if (Vector3.Distance(transform.position, moveSpots[randomSpot].position) < 10f)
+        if (Vector3.Distance(transform.position, navPoints[randomSpot].position) < 10f)
         {
-            randomSpot = Random.Range(0, moveSpots.Length);
+            randomSpot = Random.Range(0, navPoints.Count);
         }
         ///////////////////////////////////////////
         
@@ -68,7 +85,10 @@ public class NPCController : MonoBehaviour
             agent.isStopped = false;
 
             //GOTO PLAYER POS
-            agent.SetDestination(target.position);
+            if (target != null)
+            {
+                agent.SetDestination(target.position);
+            }
         }
         else if (this.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, this.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
         {
@@ -87,12 +107,14 @@ public class NPCController : MonoBehaviour
             agent.isStopped = false;
 
             //Move NPC to random position set at beginning of Update()
-            agent.SetDestination(moveSpots[randomSpot].position);
+            agent.SetDestination(navPoints[randomSpot].position);
         }
 
 
 
     }
+
+
 
     /*
      * FaceTarget() turns the NPCs gun towards the player

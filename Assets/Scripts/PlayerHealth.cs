@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    //g
     public void ReduceHealth(float f)
     {
         health -= f;

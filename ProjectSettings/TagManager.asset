@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PlayerTank
+  - Enemy
+  - Spawnpoint
+  - Navpoint
   layers:
   - Default
   - TransparentFX

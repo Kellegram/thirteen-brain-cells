@@ -31,12 +31,12 @@ public class ConstantMovement : MonoBehaviour
         //Moves character forward and backward
         //Set velocity
 
-        if (Input.GetKey(KeyCode.W)) 
+        if (Input.GetKey(KeyCode.W))
         {
             Vector3 xzTransform = transform.forward * velocityFactor;
             rb.velocity = new Vector3(xzTransform.x, rb.velocity.y, xzTransform.z);
         }
-        else if(Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S))
         {
             Vector3 xzTransform = -transform.forward * velocityFactor;
             rb.velocity = new Vector3(xzTransform.x, rb.velocity.y, xzTransform.z);
