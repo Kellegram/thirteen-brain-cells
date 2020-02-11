@@ -14,6 +14,7 @@ public class BulletCollision : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        GameObject.FindObjectOfType<AudioManager>().Play("explosion");
         //If the bullet hit a player, this will detect that
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (playerHealth != null)
