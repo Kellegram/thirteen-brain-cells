@@ -13,13 +13,13 @@ public class Shooting : MonoBehaviour
     //bulletForce is the speed at which the bullet comes out
     public float bulletForce = 80f;
 
-
-
-
     //These variables are for limiting fire rate of the player
     float waitTillNextFire = 0f;
     public float fireSpeed = 2f;
 
+    /*
+     
+    // */
     private void Start()
     {
         GameObject.Find("harambe_animation").GetComponent<Animator>().SetBool("ReloadBool", false);
@@ -33,6 +33,7 @@ public class Shooting : MonoBehaviour
         {
             if (waitTillNextFire <= 0)
             {
+                FindObjectOfType<AudioManager>().Play("FireSound");
                 Shoot();
                 waitTillNextFire = 1;
             }
@@ -59,8 +60,5 @@ public class Shooting : MonoBehaviour
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
-
-
-
     }
 }
