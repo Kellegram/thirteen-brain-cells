@@ -15,7 +15,6 @@ public class AudioManager : MonoBehaviour
     // */ 
     void Awake()
     {
-
         if (instance == null)
             instance = this;
         else
@@ -23,12 +22,12 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         //Loops through every Sound object in the sounds array and makes a definition for its AudioSource
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
         }
@@ -43,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     If it is null, you will receive an error in the console.
 
-    You can call this function from any script by doing 
+    You can call this function from any script by doing FindObjectOfType<AudioManager>().Play("SoundName");
     // */
     public void Play (string name)
     {
