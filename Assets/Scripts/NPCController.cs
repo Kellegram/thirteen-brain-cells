@@ -60,7 +60,7 @@ public class NPCController : MonoBehaviour
         }
         ///////////////////////////////////////////
         
-       
+        
         if (this.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
         {
             //Stop agent from moving
@@ -71,7 +71,7 @@ public class NPCController : MonoBehaviour
 
             //FIRE RATE LIMIT
             if (waitTillNextFire <= 0)
-            { 
+            {
                 Shoot();
                 waitTillNextFire = 1;
             }
@@ -109,12 +109,7 @@ public class NPCController : MonoBehaviour
             //Move NPC to random position set at beginning of Update()
             agent.SetDestination(navPoints[randomSpot].position);
         }
-
-
-
     }
-
-
 
     /*
      * FaceTarget() turns the NPCs gun towards the player
@@ -132,34 +127,31 @@ public class NPCController : MonoBehaviour
      */
     void Shoot()
     {
-        //Spawns a bullet at the firepoint object location and adds a force forward.
-        GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-
-        bullet.transform.tag = "EnemyBullet";
-
-        rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
-
         //////////////////////////////////////////////////////
         // Raycast that detects what object a bullet will hit
         //////////////////////////////////////////////////////
         RaycastHit hit;
-        Vector3 rayOrigin = bullet.transform.position;
-        Vector3 rayDirection = bullet.transform.TransformDirection(Vector3.forward);
+        Vector3 rayOrigin = FirePoint.position;
+        Vector3 rayDirection = FirePoint.transform.TransformDirection(Vector3.forward);
         float rayRange = 1000, rayTime = 0.5f;
         Debug.DrawRay(rayOrigin, rayDirection * rayRange, Color.magenta, rayTime);
 
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayRange))
         {
-        
             if (hit.collider)
             {
                 if (hit.collider.tag == "PlayerTank")
                 {
+                    //Spawns a bullet at the firepoint object location and adds a force forward.
+                    GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
+                    Rigidbody rb = bullet.GetComponent<Rigidbody>();
+            
+                    bullet.transform.tag = "EnemyBullet";
+            
+                    rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
                     Debug.Log("Bullet heading towards player");
                 }
             }
-
         }
     }
 }
