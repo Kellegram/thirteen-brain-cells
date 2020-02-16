@@ -136,6 +136,8 @@ public class NPCController : MonoBehaviour
         GameObject bullet = Instantiate(BulletPrefab, FirePoint.position, FirePoint.rotation);
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
 
+        bullet.transform.tag = "EnemyBullet";
+
         rb.AddForce(FirePoint.forward * bulletForce, ForceMode.Impulse);
 
         //////////////////////////////////////////////////////

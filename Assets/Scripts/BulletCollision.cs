@@ -18,8 +18,24 @@ public class BulletCollision : MonoBehaviour
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
         if (playerHealth != null)
         {
+            if (other.tag == "Enemy")
+            {
+                if (gameObject.tag != "EnemyBullet")
+                {
+                    playerHealth.ReduceHealth(damage);
+                }
+            }
+            if (other.tag == "Player")
             playerHealth.ReduceHealth(damage);
         }
+
+
+
+
+
+
+
+
 
         //Instantiate(HitEffect, transform.position, Quaternion.identity);
 

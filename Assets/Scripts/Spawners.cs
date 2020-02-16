@@ -67,7 +67,8 @@ public class Spawners : MonoBehaviour
             for (int i = 0; i < numTanks; i++)
             {
                 int spawnNumber = Random.Range(0, spawnPoints.Count);
-                GameObject enemy = Instantiate(EnemyPrefab, spawnPoints[spawnNumber].position, spawnPoints[spawnNumber].rotation);
+                Vector3 spawnPointRandomizer = new Vector3(Random.Range(-20,20), spawnPoints[spawnNumber].position.y, Random.Range(-20,20));
+                GameObject enemy = Instantiate(EnemyPrefab, spawnPoints[spawnNumber].position + spawnPointRandomizer, spawnPoints[spawnNumber].rotation);
                 enemies.Add(enemy);
             }
         }

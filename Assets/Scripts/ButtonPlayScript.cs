@@ -10,6 +10,4 @@ public class ButtonPlayScript : MonoBehaviour
     {
         SceneManager.LoadScene(Endless);
     }
-
-
 }
