@@ -14,12 +14,16 @@ public class SpawnManager : MonoBehaviour
     }
     #endregion
 
+    //Editor variables. Insert any doors/lights into script. Order matters. IntensitySpeed determines how quickly the lights flash. maxIntesity is how bright they go.
     public GameObject[] doors;
-
     public Light[] lights;
     public float intensitySpeed = 30f;
     public float maxIntensity = 25f;
 
+    /*
+     * OpenDoor() sets all of the variables for animating the door correctly.
+     * The, PingPings the brightness and intensity of the lights.
+     */
     public void OpenDoor(int doorNumber)
     {
         doors[doorNumber].transform.Find("DoorFlapLeft").gameObject.GetComponent<Animator>().SetBool("isopening", true);
@@ -30,6 +34,9 @@ public class SpawnManager : MonoBehaviour
         lights[doorNumber].intensity = Mathf.PingPong(Time.time * intensitySpeed, maxIntensity);
     }
 
+    /*
+     * CloseDoor() ends the animation of the doors and the flashing of the lights.
+     */
     public void CloseDoor(int doorNumber)
     {
         doors[doorNumber].transform.Find("DoorFlapLeft").gameObject.GetComponent<Animator>().SetBool("isclosing", true);
