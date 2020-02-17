@@ -18,6 +18,9 @@ public class Spawners : MonoBehaviour
     int waveNumber = 0;
     int numTanks = 1;
 
+    //Reference Score script to increment the stageCounter
+    Score stageCnt;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -39,6 +42,8 @@ public class Spawners : MonoBehaviour
                 spawnPoints.Add(child);
             }
         }
+
+        stageCnt = PlayerManager.instance.player.GetComponent<Score>();
     }
     IEnumerator EnemyDeathCheckWithDelay(float delay)
     {
@@ -71,6 +76,8 @@ public class Spawners : MonoBehaviour
                 GameObject enemy = Instantiate(EnemyPrefab, spawnPoints[spawnNumber].position + spawnPointRandomizer, spawnPoints[spawnNumber].rotation);
                 enemies.Add(enemy);
             }
+
+            stageCnt.incrementStage();
         }
     }
 
