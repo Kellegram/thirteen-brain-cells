@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health <= 0)
         {
+            if (gameObject.tag == "PlayerTank")
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+            }
             Destroy(gameObject);
         }
     }
