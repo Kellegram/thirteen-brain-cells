@@ -44,8 +44,8 @@ public class FlyCam : MonoBehaviour
     void Update()
     {
         //Update the camera rotation based on mouse movement
-        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.deltaTime;
-        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.deltaTime;
+        rotationX += Input.GetAxis("Mouse X") * cameraSensitivity * Time.fixedDeltaTime;
+        rotationY += Input.GetAxis("Mouse Y") * cameraSensitivity * Time.fixedDeltaTime;
         //Clamp the rotation in y axis to prevent inverted controls
         rotationY = Mathf.Clamp(rotationY, -90, 90);
 
@@ -60,12 +60,12 @@ public class FlyCam : MonoBehaviour
          */
         if (!Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position += transform.forward * camSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
-            transform.position += transform.right * camSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+            transform.position += transform.forward * camSpeed * Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime;
+            transform.position += transform.right * camSpeed * Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime;
         }else
         {
-            transform.position += transform.forward * fastCamSpeed * Input.GetAxis("Vertical") * Time.deltaTime;
-            transform.position += transform.right * fastCamSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
+            transform.position += transform.forward * fastCamSpeed * Input.GetAxisRaw("Vertical") * Time.fixedDeltaTime;
+            transform.position += transform.right * fastCamSpeed * Input.GetAxisRaw("Horizontal") * Time.fixedDeltaTime;
         }    
         
         /*
