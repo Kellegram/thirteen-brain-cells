@@ -19,6 +19,8 @@ public class FlyCam : MonoBehaviour
     private float fastCamSpeed = 50f;//modify cam speed when shift is held
     [SerializeField]
     private float cameraSensitivity = 50f;
+    [SerializeField]
+    private KeyCode freezeKey;
 
     private bool zoomingIn;
     private bool isFast;
@@ -66,6 +68,10 @@ public class FlyCam : MonoBehaviour
             transform.position += transform.right * fastCamSpeed * Input.GetAxis("Horizontal") * Time.deltaTime;
         }    
         
+        /*
+         Call SetupCam() if switching from main camera to free fly cam
+         else call DisableCam() when switching back to main camera
+         */
         if(!Camera.main)
         {
             SetupCam();
@@ -73,9 +79,22 @@ public class FlyCam : MonoBehaviour
         {
             DisableCam();
         }
-
+        
+        //Freeze the game with a chosen key
+        if(Input.GetKeyDown(freezeKey))
+        {
+            if (Time.timeScale == 0f)
+                Time.timeScale = 1f;
+            else if (Time.timeScale > 0f)
+                Time.timeScale = 0f;
+        }
     }
 
+    /*
+    Call this function when switching to the free cam
+    -Hide and lock the cursor
+    -Disable tank controls
+    */
     private void SetupCam()
     {
         Cursor.visible = false;
@@ -83,6 +102,11 @@ public class FlyCam : MonoBehaviour
         GameObject.Find("PlayerTank").GetComponent<ConstantMovement>().enabled = false;
     }
 
+    /*
+    Call this function when switching to the free cam
+    -Re-enable the cursor
+    -Enable tank controls
+    */
     private void DisableCam()
     {
         Cursor.visible = true;
