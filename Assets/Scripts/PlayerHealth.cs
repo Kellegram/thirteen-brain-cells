@@ -22,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
             if (gameObject.tag == "Enemy")
             {
                 plScore.addScore(20);
+            }
             if (gameObject.tag == "PlayerTank")
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
