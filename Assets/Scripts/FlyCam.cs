@@ -12,7 +12,7 @@ using UnityEngine;
 
 public class FlyCam : MonoBehaviour
 {
-    //Private variables----------------------------------------------
+    //Private variables----------------------------------------------------
     [SerializeField]
     private float camSpeed = 15f;//modify normal cam speed
     [SerializeField]
@@ -21,13 +21,18 @@ public class FlyCam : MonoBehaviour
     private float cameraSensitivity = 50f;
     [SerializeField]
     private KeyCode freezeKey;
+    [SerializeField]
+    private KeyCode slomokey;
+    [SerializeField]
+    private float slowMoRate = 0.5f;
 
     private bool zoomingIn;
     private bool isFast;
     private float zoomAmount;
     private float rotationX= 0f;
     private float rotationY = 0f;
-    //---------------------------------------------------------------
+    private bool isFreezeEnabled = false;
+    //--------------------------------------------------------------------
 
 
     // Start is called before the first frame update
@@ -38,6 +43,7 @@ public class FlyCam : MonoBehaviour
         isFast = false;
         rotationX = 0f;
         rotationY = 0f;
+        isFreezeEnabled = false;
     }
 
     // Update is called once per frame
@@ -84,9 +90,29 @@ public class FlyCam : MonoBehaviour
         if(Input.GetKeyDown(freezeKey))
         {
             if (Time.timeScale == 0f)
+            {
+                isFreezeEnabled = false;
                 Time.timeScale = 1f;
+            }
             else if (Time.timeScale > 0f)
+            {
+                isFreezeEnabled = true;
                 Time.timeScale = 0f;
+            }
+        }
+
+        if (!isFreezeEnabled)
+        {
+            if (Input.GetKey(slomokey))
+            {
+                Time.timeScale = slowMoRate;
+                Time.fixedDeltaTime = 0.02F * Time.timeScale;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+                Time.fixedDeltaTime = 0.02F;
+            }
         }
     }
 
