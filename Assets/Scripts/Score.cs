@@ -23,9 +23,8 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = "Score: " + playerScore.ToString() + "\nWave: " + waveCounter.ToString();
-
-        //Debug.Log(playerScore);
+       // scoreDisplay.text = "Score: " + playerScore.ToString() + "\nWave: " + waveCounter.ToString();
+        scoreDisplay.text = waveCounter.ToString();
     }
 
     /*
