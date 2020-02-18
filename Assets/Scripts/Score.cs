@@ -11,29 +11,30 @@ public class Score : MonoBehaviour
 
     //Private variables
     private int playerScore;
-    private int stageCounter;
+    private int waveCounter;
 
     // Start is called before the first frame update
     void Start()
     {
         playerScore = 0;
-        stageCounter = 0;
+        waveCounter = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreDisplay.text = "Score: " + playerScore.ToString() + "\nStage: " + stageCounter.ToString();
+        scoreDisplay.text = "Score: " + playerScore.ToString() + "\nWave: " + waveCounter.ToString();
 
         //Debug.Log(playerScore);
     }
 
-    public void addScore(int points)
-    {
-        playerScore += points;
-    }
-
-    public void incrementStage(){stageCounter++;}
+    /*
+     Setters to call from other functions
+     -Raise player score
+     -
+         */
+    public void addScore(int points){playerScore += points;}
+    public void incrementWave(){waveCounter++;}
 
     /*
      Call this from any script to reset player's score
@@ -41,6 +42,6 @@ public class Score : MonoBehaviour
     public void ResetScore()
     {
         playerScore = 0;
-        stageCounter = 0;
+        waveCounter = 0;
     }
 }
