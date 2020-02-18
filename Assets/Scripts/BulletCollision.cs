@@ -26,6 +26,9 @@ public class BulletCollision : MonoBehaviour
                 }
             }
             if (other.tag == "PlayerTank")
+            {
+
+            }
               playerHealth.ReduceHealth(damage);
         }
 
