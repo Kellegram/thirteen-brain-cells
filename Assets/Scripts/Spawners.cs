@@ -77,7 +77,7 @@ public class Spawners : MonoBehaviour
                 enemies.Add(enemy);
             }
 
-            stageCnt.incrementStage();
+            stageCnt.incrementWave();
         }
     }
 
