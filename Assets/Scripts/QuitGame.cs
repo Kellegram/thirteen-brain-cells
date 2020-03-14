@@ -11,6 +11,8 @@ public class QuitGame : MonoBehaviour
         if (Input.GetKey("p"))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         if (Input.GetKey("escape"))
         {
