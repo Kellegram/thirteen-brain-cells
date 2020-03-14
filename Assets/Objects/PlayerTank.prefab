@@ -263,9 +263,9 @@ GameObject:
   - component: {fileID: 2123563799913059182}
   - component: {fileID: 2123563799913059181}
   - component: {fileID: 2123563799913059180}
-  - component: {fileID: 2123563799913059179}
+  - component: {fileID: 1213362133023350001}
   m_Layer: 8
-  m_Name: PlayerTank 1
+  m_Name: PlayerTank
   m_TagString: PlayerTank
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000000
---- !u!114 &2123563799913059179
+--- !u!114 &1213362133023350001
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,13 +338,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2123563799913059178}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fe9b637bb1cd164892338c3aa2ecef0, type: 3}
+  m_Script: {fileID: 11500000, guid: 49ffc028a17433f48ac5dc654d310e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 2123563799913059182}
-  maxTurnRate: 1
-  turnFactor: 30.21
-  velocityFactor: 30
+  speed: 10
+  turnSpeed: 180
 --- !u!1 &2123563800034974610
 GameObject:
   m_ObjectHideFlags: 0
