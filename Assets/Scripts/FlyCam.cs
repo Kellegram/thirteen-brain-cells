@@ -125,7 +125,7 @@ public class FlyCam : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        GameObject.Find("PlayerTank").GetComponent<ConstantMovement>().enabled = false;
+        GameObject.Find("PlayerTank").GetComponent<TankMovement>().enabled = false;
     }
 
     /*
@@ -137,9 +137,6 @@ public class FlyCam : MonoBehaviour
     {
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-        GameObject.Find("PlayerTank").GetComponent<ConstantMovement>().enabled = true;
+        GameObject.Find("PlayerTank").GetComponent<TankMovement>().enabled = true;
     }
 }
-
-
-
