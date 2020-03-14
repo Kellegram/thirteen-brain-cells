@@ -59,6 +59,9 @@ public class TankMovement : MonoBehaviour
     {
         Move();
         Turn();
+
+        tankRigidBody.velocity = new Vector3(0f, 0f, 0f);
+        tankRigidBody.angularVelocity = new Vector3(0f, 0f, 0f);
     }
 
     private void Move()
@@ -77,6 +80,5 @@ public class TankMovement : MonoBehaviour
 
         //Apply rotation
         tankRigidBody.MoveRotation(tankRigidBody.rotation * turnRotation);
-
     }
 }

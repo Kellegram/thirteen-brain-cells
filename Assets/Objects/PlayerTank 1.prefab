@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 2123563799913059181}
   - component: {fileID: 2123563799913059180}
   - component: {fileID: 1257792721}
-  - component: {fileID: 1257792726}
   m_Layer: 8
   m_Name: PlayerTank 1
   m_TagString: PlayerTank
@@ -342,22 +341,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ffc028a17433f48ac5dc654d310e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: 0, z: 0}
   speed: 25
   turnSpeed: 120
---- !u!114 &1257792726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2123563799913059178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a9f58beaeb5f840baa3705933ed095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 0}
 --- !u!1 &2123563800034974610
 GameObject:
   m_ObjectHideFlags: 0
