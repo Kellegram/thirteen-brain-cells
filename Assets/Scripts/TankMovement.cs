@@ -42,6 +42,7 @@ public class TankMovement : MonoBehaviour
     private void Start()
     {
       //  tankRigidBody.centerOfMass = centerOfMass;
+      tankRigidBody.maxAngularVelocity = 0f;
     }
 
     /*
@@ -52,6 +53,7 @@ public class TankMovement : MonoBehaviour
     {
         movementFactor = Input.GetAxis("Vertical");
         turnFactor = Input.GetAxis("Horizontal");
+        tankRigidBody.velocity = new Vector3(0f, 0f, 0f);
     }
 
 
@@ -59,9 +61,7 @@ public class TankMovement : MonoBehaviour
     {
         Move();
         Turn();
-
-        tankRigidBody.velocity = new Vector3(0f, 0f, 0f);
-        tankRigidBody.angularVelocity = new Vector3(0f, 0f, 0f);
+        // tankRigidBody.angularVelocity = new Vector3(0f, 0f, 0f);
     }
 
     private void Move()
