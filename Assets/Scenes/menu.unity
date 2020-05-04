@@ -351,14 +351,14 @@ RectTransform:
   m_GameObject: {fileID: 824047291}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -2.3}
-  m_LocalScale: {x: 0.53204453, y: 0.8491692, z: 1.843}
+  m_LocalScale: {x: 0.5692603, y: 0.8491692, z: 1.843}
   m_Children: []
   m_Father: {fileID: 1478562041}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 31.6, y: -13.776535}
+  m_AnchoredPosition: {x: 31.4, y: -13.776535}
   m_SizeDelta: {x: 179, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &824047293
@@ -517,14 +517,14 @@ RectTransform:
   m_GameObject: {fileID: 1289328565}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5965453, y: 0.4920031, z: 1}
+  m_LocalScale: {x: 0.5965453, y: 0.8438733, z: 1}
   m_Children: []
   m_Father: {fileID: 1478562041}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.5, y: 13}
+  m_AnchoredPosition: {x: -23.3, y: 15.2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1289328567
@@ -569,7 +569,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1289328568}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1478562042}
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1289328568
@@ -592,7 +603,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 788fc86c3182d1f4d9cacce5b70ffea4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 212b695b8b8415947b08f4e3cd2cda77, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
