@@ -23108,20 +23108,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: theme
-    clip: {fileID: 8300000, guid: 985a65a2913cd5246a9a3f02c2eb98a1, type: 3}
-    volume: 1
-    pitch: 1
-    source: {fileID: 0}
   - name: FireSound
     clip: {fileID: 8300000, guid: 5053ec803986aa44594be5fd85f7e033, type: 3}
-    volume: 1
+    volume: 0.13
     pitch: 1
+    isLoop: 0
     source: {fileID: 0}
   - name: explosion
     clip: {fileID: 8300000, guid: 5269c8d0246c5f2429a0936ab1e8875c, type: 3}
-    volume: 1
+    volume: 0.093
     pitch: 1
+    isLoop: 0
+    source: {fileID: 0}
+  - name: theme
+    clip: {fileID: 8300000, guid: 6c99d33caf5c9d4c195d6173d0673f37, type: 3}
+    volume: 0.09
+    pitch: 1
+    isLoop: 1
     source: {fileID: 0}
 --- !u!4 &1626820075
 Transform:

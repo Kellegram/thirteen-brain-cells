@@ -8,11 +8,11 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
 
     public static AudioManager instance;
-    
+
     /*
     The Awake function gets called when the AudioManager is awoken.
     See Unity's documentation for more information.
-    // */ 
+    // */
     void Awake()
     {
         if (instance == null)
@@ -30,6 +30,7 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.pitch = s.pitch;
+            s.source.loop = s.isLoop;
         }
 
         //Play the theme when game starts
@@ -52,7 +53,7 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Bruh moment. You tried to play " + name + " but " + name + " doesn't exist...");
             return;
         }
-            
+
         s.source.Play();
     }
 }
