@@ -21,20 +21,13 @@ public class Spawners : MonoBehaviour
     //Reference Score script to increment the stageCounter
     Score stageCnt;
 
-
     // Start is called before the first frame update
     private void Start()
     {
-        //ensures game isn't checking if enemies are dead every frame
         StartCoroutine("EnemyDeathCheckWithDelay", .2f);
-
-        //Map is added to player manager and detected by this script
         map = PlayerManager.instance.map;
-
-        //Add all navpoints when enemy is spawned
         Transform[] allChildren = map.GetComponentsInChildren<Transform>();
         
-        //Looks at all the child objects of the map object to find spawn points
         foreach (Transform child in allChildren)
         {
             if (child.gameObject.tag == "Spawnpoint")
@@ -45,6 +38,7 @@ public class Spawners : MonoBehaviour
 
         stageCnt = PlayerManager.instance.player.GetComponent<Score>();
     }
+
     IEnumerator EnemyDeathCheckWithDelay(float delay)
     {
         while (true)
@@ -54,8 +48,11 @@ public class Spawners : MonoBehaviour
             EnemyDeathCheck();
         }
     }
-
-    // Update is called once per frame
+ 
+    /* Update() is called each frame
+     * In this case, Update() will check every frame when all of the enemies are dead.
+     * Once they are dead, it will instantiate a new wave of enemies.
+     */
     void Update()
     {
         if (enemies.Count <= 0)
@@ -81,9 +78,14 @@ public class Spawners : MonoBehaviour
         }
     }
 
+    /*
+     * EnemyDeathCheck() Checks whether an enemy has been killed and reduces the size of the enemies list
+     * Takes in no variables
+     * Returns no variables
+     */
     void EnemyDeathCheck()
     {
-        //checks whether an enemy has been killed and reduces the size of the enemies list
+        
         for (int i = 0; i < enemies.Count; i++)
         {
             if (enemies[i] == null)

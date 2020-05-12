@@ -16,7 +16,6 @@ public class NPCController : MonoBehaviour
     public float fireSpeed = 2f;
     public float bulletForce = 80f;
     [Space(20)]
-    //Not public
     float waitTillNextFire = 0f;
     Transform target;
     private int randomSpot;
@@ -53,36 +52,31 @@ public class NPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //SET RANDOM POSITION FOR NPC TO MOVE TO
+        //Set random position for agent to move to
         if (Vector3.Distance(transform.position, navPoints[randomSpot].position) < 10f)
         {
             randomSpot = Random.Range(0, navPoints.Count);
         }
         
-        if (this.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
+        //State machine for NPC tank
+        if (this.GetComponent<FieldOfView>().attackTarget)
         {
-            //Stop agent from moving
             agent.isStopped = true;
-
-            //Face the target
             FaceTarget();
 
-            //FIRE RATE LIMIT
+            //For fire cooldown
             if (waitTillNextFire <= 0)
             {
                 Shoot();
                 waitTillNextFire = 1;
             }
 
-            //FIRESPEED IS A PUBLIC VARIABLE SET IN EDITOR TO LIMIT FIRE RATE.
             waitTillNextFire -= Time.deltaTime * fireSpeed;
         }
-        else if (this.GetComponent<FieldOfView>().followTarget) //IF PLAYER IS IN FOLLOW RANGE
+        else if (this.GetComponent<FieldOfView>().followTarget)
         {
             //Make sure player is not stopped
             agent.isStopped = false;
-
-            //GOTO PLAYER POS
             if (target != null)
             {
                 agent.SetDestination(target.position);
@@ -90,21 +84,13 @@ public class NPCController : MonoBehaviour
         }
         else if (this.GetComponent<FieldOfView>().lastPos != Vector3.zero && !(Vector3.Distance(transform.position, this.GetComponent<FieldOfView>().lastPos) < 10f)) //IF LAST POSITION IS NOT 0 AND NPC HAS NOT REACHED lastPos
         {
-            //Make sure player is not stopped
             agent.isStopped = false;
-
-            //GO TO LAST POSITION OF PLAYER
             agent.SetDestination(this.GetComponent<FieldOfView>().lastPos);
         }
         else
         {
-            //IF WANDERING, SET LASTPOS TO 0
             this.GetComponent<FieldOfView>().lastPos = Vector3.zero;
-
-            //Make sure player is not stopped
             agent.isStopped = false;
-
-            //Move NPC to random position set at beginning of Update()
             agent.SetDestination(navPoints[randomSpot].position);
         }
     }
