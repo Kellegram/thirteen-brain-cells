@@ -58,8 +58,6 @@ public class NPCController : MonoBehaviour
         {
             randomSpot = Random.Range(0, navPoints.Count);
         }
-        ///////////////////////////////////////////
-        
         
         if (this.GetComponent<FieldOfView>().attackTarget) //IF PLAYER IS IN ATTACK RANGE
         {
@@ -112,30 +110,33 @@ public class NPCController : MonoBehaviour
     }
 
     /*
-     * FaceTarget() turns the NPCs gun towards the player
+     * FaceTarget() rotates the NPCs gun towards the player
+     * Takes in no variables
+     * Returns no variables
      */
     void FaceTarget()
     {
         Vector3 direction = (target.position - Gun.transform.position).normalized;
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        //Transforms the Gun object's rotation to smoothly linearly interpolate between its current rotation and the target rotation.
         Gun.transform.rotation = Quaternion.Slerp(Gun.transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
 
 
     /*
      * Shoot() fires a bullet in a straight line, then detects whether or it's heading towards the player.
+     * Takes in no variables
+     * Returns no variables
      */
     void Shoot()
     {
-        //////////////////////////////////////////////////////
-        // Raycast that detects what object a bullet will hit
-        //////////////////////////////////////////////////////
         RaycastHit hit;
         Vector3 rayOrigin = FirePoint.position;
         Vector3 rayDirection = FirePoint.transform.TransformDirection(Vector3.forward);
         float rayRange = 1000, rayTime = 0.5f;
         Debug.DrawRay(rayOrigin, rayDirection * rayRange, Color.magenta, rayTime);
 
+        //If a raycast hits an object from 
         if (Physics.Raycast(rayOrigin, rayDirection, out hit, rayRange))
         {
             if (hit.collider)
