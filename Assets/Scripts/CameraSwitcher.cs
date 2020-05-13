@@ -10,6 +10,11 @@ public class CameraSwitcher : MonoBehaviour
         public KeyCode key;
     }
     public List<CameraShortcut> cameraShortcuts = new List<CameraShortcut>();
+
+    /*
+     * Update() is called every frame
+     * Checks if someone has pressed the assigned camera switch key, and switches cameras.
+     */
     private void Update()
     {
         foreach (CameraShortcut cs in cameraShortcuts)

@@ -6,7 +6,10 @@ public class GunRotation : MonoBehaviour
 {
     Vector3 EulerAngleVelocity, pushBackEuler;
 
-    // FixedUpdate is called once per frame
+    /*
+     * FixedUpdate() is called every frame.
+     * This function will calculate the players gun rotation.
+     */
     void FixedUpdate()
     {
         //Rotate 100 around the y axis

@@ -16,7 +16,10 @@ public class laser : MonoBehaviour
         lr = GetComponent<LineRenderer>();
     }
 
-    // Update is called once per frame
+    /*
+     * Update() is called every frame.
+     * This function will check every frame is the player is facing the enemy, and change the colour of the line renderer if it is.
+     */
     void Update()
     {
         RaycastHit hit;

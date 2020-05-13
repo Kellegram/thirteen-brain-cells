@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//[Deprecated Class]
 public class ConstantMovement : MonoBehaviour
 {
     //Rigidbody rb represents whichever model this script is attached to

@@ -22,6 +22,10 @@ public class NPCController : MonoBehaviour
     public List<Transform> navPoints;
     GameObject map;
 
+    /*
+     * Start() begins when the object with this script on it is instatiated.
+     * This script will assign all of the necessary variables in order for the enemy tank to operate correctly.
+     */
     private void Start()
     {
         map = PlayerManager.instance.map;
@@ -49,7 +53,10 @@ public class NPCController : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
+    /*
+     * Update() is called once per frame
+     * This function manages the enemy's state machine AI
+     */
     void Update()
     {
         //Set random position for agent to move to
