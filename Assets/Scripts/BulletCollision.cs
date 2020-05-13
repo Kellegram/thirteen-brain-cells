@@ -27,9 +27,11 @@ public class BulletCollision : MonoBehaviour
             }
             if (other.tag == "PlayerTank")
             {
-
-            }
-              playerHealth.ReduceHealth(damage);
+                if (gameObject.tag == "EnemyBullet")
+                {
+                    playerHealth.ReduceHealth(damage);
+                }
+            }  
         }
 
         //Instantiate(HitEffect, transform.position, Quaternion.identity);

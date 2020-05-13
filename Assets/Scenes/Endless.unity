@@ -13561,7 +13561,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 995302809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75c73029bdfd17a4787efc157da323c4, type: 3}
+  m_Script: {fileID: 11500000, guid: f39e600063a93300d87775abbd2b0433, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   EnemyPrefab: {fileID: 1825700743980147625, guid: b7b90921a60e31e4d96f995178efc3f6,
@@ -13610,9 +13610,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1000350183}
-  - component: {fileID: 1000350182}
-  - component: {fileID: 1000350184}
   - component: {fileID: 1000350185}
+  - component: {fileID: 1000350184}
+  - component: {fileID: 1000350182}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -13629,11 +13629,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000350181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11bffc845719942459a4404ba63c6d9d, type: 3}
+  m_Script: {fileID: 11500000, guid: a4f8dc0b6d69d6106abe4f9581987aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   orbit: {fileID: 1964362395}
-  player: {fileID: 1257792720}
+  player: {fileID: 1863892995}
   map: {fileID: 1256889613}
 --- !u!4 &1000350183
 Transform:
@@ -13658,7 +13658,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000350181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e23fb6a7feab384bb96416b50f42109, type: 3}
+  m_Script: {fileID: 11500000, guid: 95ef942076c37a9ad9f83b7774f92329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1000350185
@@ -13670,14 +13670,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000350181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfeab691615dcb54496dd4a7bb0b0179, type: 3}
+  m_Script: {fileID: 11500000, guid: 72e2c38ce60ce758587eafe92a6b1d38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraShortcuts:
-  - camera: {fileID: 1964362393}
-    key: 118
-  - camera: {fileID: 1383018630}
-    key: 44
+  cameraShortcuts: []
 --- !u!1 &1002077947
 GameObject:
   m_ObjectHideFlags: 0
@@ -15510,25 +15506,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1257792720 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2123563799913059178, guid: 85b4fe6840207dc43972d11b3ef5d26a,
-    type: 3}
-  m_PrefabInstance: {fileID: 1863892994}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1257792726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1257792720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41a9f58beaeb5f840baa3705933ed095, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 135900303}
 --- !u!1 &1260636759
 GameObject:
   m_ObjectHideFlags: 0
@@ -21369,7 +21346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1383018631}
   - component: {fileID: 1383018630}
-  - component: {fileID: 1383018632}
+  - component: {fileID: 1383018629}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -21377,6 +21354,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1383018629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383018628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c21e05c7341ea471f82f2dbe1c2bf9fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camSpeed: 15
+  fastCamSpeed: 50
+  cameraSensitivity: 50
+  freezeKey: 47
+  slomokey: 46
+  slowMoRate: 0.3
 --- !u!20 &1383018630
 Camera:
   m_ObjectHideFlags: 0
@@ -21434,24 +21429,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1383018632
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1383018628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 605d4ad199ab6e14cb853125c8b4246b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camSpeed: 15
-  fastCamSpeed: 50
-  cameraSensitivity: 50
-  freezeKey: 47
-  slomokey: 46
-  slowMoRate: 0.3
 --- !u!1 &1407409693
 GameObject:
   m_ObjectHideFlags: 0
@@ -23104,27 +23081,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1626820073}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01e5dcd3824866d43b12ec52e2b5d281, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f529c29b30a6a3eda542273679eda0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: theme
+    clip: {fileID: 8300000, guid: 6c99d33caf5c9d4c195d6173d0673f37, type: 3}
+    volume: 1
+    pitch: 1
+    isLoop: 1
+    source: {fileID: 0}
   - name: FireSound
     clip: {fileID: 8300000, guid: 5053ec803986aa44594be5fd85f7e033, type: 3}
-    volume: 0.13
+    volume: 1
     pitch: 1
     isLoop: 0
     source: {fileID: 0}
   - name: explosion
     clip: {fileID: 8300000, guid: 5269c8d0246c5f2429a0936ab1e8875c, type: 3}
-    volume: 0.093
+    volume: 1
     pitch: 1
     isLoop: 0
-    source: {fileID: 0}
-  - name: theme
-    clip: {fileID: 8300000, guid: 6c99d33caf5c9d4c195d6173d0673f37, type: 3}
-    volume: 0.09
-    pitch: 1
-    isLoop: 1
     source: {fileID: 0}
 --- !u!4 &1626820075
 Transform:
@@ -30337,8 +30314,47 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 116
       objectReference: {fileID: 0}
+    - target: {fileID: 5550223098534036243, guid: 85b4fe6840207dc43972d11b3ef5d26a,
+        type: 3}
+      propertyPath: speed
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5550223098534036243, guid: 85b4fe6840207dc43972d11b3ef5d26a,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484817426803452558, guid: 85b4fe6840207dc43972d11b3ef5d26a,
+        type: 3}
+      propertyPath: fireSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1484817426803452558, guid: 85b4fe6840207dc43972d11b3ef5d26a,
+        type: 3}
+      propertyPath: bulletForce
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85b4fe6840207dc43972d11b3ef5d26a, type: 3}
+--- !u!1 &1863892995 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2123563799913059178, guid: 85b4fe6840207dc43972d11b3ef5d26a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1863892994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1863893001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863892995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6004cfd5fb501f4daef034ab058ef2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scoreDisplay: {fileID: 135900303}
 --- !u!1 &1863925895
 GameObject:
   m_ObjectHideFlags: 0
@@ -31503,11 +31519,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1964362391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b5b92585eb0d98442a1e14d10dff5d00, type: 3}
+  m_Script: {fileID: 11500000, guid: 805b265cad9208f708a76cf67cde7e0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsety: 40
-  offsetz: 50
+  offsety: 30
+  offsetz: 16
   rotSpeed: 30
 --- !u!1 &1965971802
 GameObject:

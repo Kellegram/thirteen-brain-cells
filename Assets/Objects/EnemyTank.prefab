@@ -230,9 +230,9 @@ GameObject:
   - component: {fileID: 1825700743980147628}
   - component: {fileID: 1825700743980147627}
   - component: {fileID: 1227423856738398036}
-  - component: {fileID: 1227423856738398039}
-  - component: {fileID: 1227423856738398038}
-  - component: {fileID: 5696130683540611078}
+  - component: {fileID: 3661354988420259117}
+  - component: {fileID: 7404794847860294434}
+  - component: {fileID: 4801535812795579034}
   m_Layer: 0
   m_Name: EnemyTank
   m_TagString: Enemy
@@ -307,7 +307,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &1227423856738398039
+--- !u!114 &3661354988420259117
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -316,7 +316,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825700743980147625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f8330c76b28c884d9112564a20132e8, type: 3}
+  m_Script: {fileID: 11500000, guid: a5b5da35e2f2d8ad9931c2fc39039103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1825700743750932874}
@@ -324,10 +324,10 @@ MonoBehaviour:
   BulletPrefab: {fileID: 2376810981390829084, guid: 17a6528df53fdd744b062a361ed8bd6d,
     type: 3}
   agent: {fileID: 1227423856738398036}
-  fireSpeed: 0.5
-  bulletForce: 80
+  fireSpeed: 2
+  bulletForce: 110
   navPoints: []
---- !u!114 &1227423856738398038
+--- !u!114 &7404794847860294434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -336,11 +336,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825700743980147625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3d1c6fc322aad041b85d74c7b962225, type: 3}
+  m_Script: {fileID: 11500000, guid: 71596f8eb96c52f91a4b06d59e1efcce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 200
---- !u!114 &5696130683540611078
+--- !u!114 &4801535812795579034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -349,10 +349,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1825700743980147625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac6cfbb369ef2b6479c6e8ea82c308ad, type: 3}
+  m_Script: {fileID: 11500000, guid: ced1f604b96a5464095fecb802418e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRadius: 75
+  attackRadius: 50
   followRadius: 100
   targetMask:
     serializedVersion: 2
