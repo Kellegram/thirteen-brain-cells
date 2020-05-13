@@ -18,14 +18,19 @@ public class Shooting : MonoBehaviour
     public float fireSpeed = 2f;
 
     /*
-     
-    // */
+     * Start() is called when the object with this script is instatiated.
+     * This function will set the animation for the gun barrel to false.
+     */
     private void Start()
     {
         GameObject.Find("harambe_animation").GetComponent<Animator>().SetBool("ReloadBool", false);
     }
 
-    // Update is called once per frame
+    /*
+     * Update() is called every frame
+     * This script will handle what happens when the player tries to shoot,
+     * and trigger the appropriate reload animation etc...
+     */
     void Update()
     {
         //Fire1 Mapping will trigger the shoot function
@@ -37,14 +42,12 @@ public class Shooting : MonoBehaviour
                 Shoot();
                 waitTillNextFire = 1;
             }
-
         }
 
         if (waitTillNextFire <= 0)
         {
             GameObject.Find("harambe_animation").GetComponent<Animator>().SetBool("ReloadBool", false);
         }
-
         if (waitTillNextFire > 0)
         {
             //FIRESPEED IS A PUBLIC VARIABLE SET IN EDITOR TO LIMIT FIRE RATE.
@@ -53,6 +56,9 @@ public class Shooting : MonoBehaviour
         }
     }
 
+    /*
+     * Shoot() will instatiate a bullet object and add force to it.
+     */
     void Shoot()
     {
         //Spawns a bullet at the firepoint object location and adds a force forward.

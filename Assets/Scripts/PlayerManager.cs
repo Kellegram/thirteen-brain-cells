@@ -8,9 +8,7 @@ public class PlayerManager : MonoBehaviour
     #region singleton
 
     public static PlayerManager instance;
-
     public MainCam orbit;
-
     private float timer = 0f;
 
     private void Awake()
@@ -21,7 +19,6 @@ public class PlayerManager : MonoBehaviour
     
     public GameObject player;
     public GameObject map;
-
 
     private void OnEnable()
     {

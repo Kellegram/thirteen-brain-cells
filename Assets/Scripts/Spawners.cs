@@ -21,7 +21,9 @@ public class Spawners : MonoBehaviour
     //Reference Score script to increment the stageCounter
     Score stageCnt;
 
-    // Start is called before the first frame update
+    /* Start() is called when the object with this script on it is instatiated.
+     * This function will define all of the spawn points for the spawners.
+     */
     private void Start()
     {
         StartCoroutine("EnemyDeathCheckWithDelay", .2f);
