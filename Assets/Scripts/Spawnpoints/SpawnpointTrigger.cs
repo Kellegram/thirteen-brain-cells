@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnpointTrigger : MonoBehaviour
 {
-    //When 
     private bool triggered = false;
     public int doorNumber = 0;
 

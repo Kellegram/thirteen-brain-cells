@@ -1,0 +1,132 @@
+02dadc0,Penloy,19 minutes ago,Wed May 13 05:43:40 2020 +0100,More comments,
+75c6883,Penloy,50 minutes ago,Wed May 13 05:12:49 2020 +0100,More comments and clarity,
+99be8ed,Penloy,64 minutes ago,Wed May 13 04:58:12 2020 +0100,Fix game breaking issue,
+39fac0a,Penloy,12 hours ago,Tue May 12 18:29:42 2020 +0100,Fix more comments,
+e5ba6f0,Penloy,12 hours ago,Tue May 12 17:43:35 2020 +0100,changed some comments,
+63dce39,Penloy,4 days ago,Sat May 9 05:41:57 2020 +0100,Add looping music, change music, make quit button consistent with play button, make all sounds loopable.,
+d53ecf9,Penloy,9 days ago,Mon May 4 16:50:19 2020 +0100,Saved Scene,
+38b96ba,Penloy,9 days ago,Mon May 4 03:51:47 2020 +0100,Make every button work on the main menu.,
+d9ab52d,BaconLetale,8 weeks ago,Sat Mar 14 18:47:02 2020 +0000,Tank movement finalized,
+0584e16,BaconLetale,8 weeks ago,Sat Mar 14 17:51:39 2020 +0000,Update TankMovement.cs,
+19b0b91,BaconLetale,8 weeks ago,Sat Mar 14 17:37:04 2020 +0000,Fixed movement physics,
+f202310,BaconLetale,9 weeks ago,Sat Mar 14 17:30:22 2020 +0000,New movement,
+ce1c799,Piotr Szulc,3 months ago,Tue Feb 25 15:59:14 2020 +0000,Added camera spin at round start,
+1dad155,BaconLetale,3 months ago,Tue Feb 25 11:18:38 2020 +0000,Merge pull request #25 from BaconLetale/v0.42,V0.42
+8e36a72,Piotr Szulc,3 months ago,Tue Feb 18 13:57:55 2020 +0000,Added slow motion, improved antialiasing,
+7bd3709,Piotr Szulc,3 months ago,Tue Feb 18 13:25:38 2020 +0000,Updated UI,-Raised font quality
+-Resized the interface
+
+246e36d,lloyd,3 months ago,Tue Feb 18 13:20:20 2020 +0000,deleted useless stuff,
+df0640a,lloyd,3 months ago,Tue Feb 18 13:18:20 2020 +0000,Visible meta files,
+db54e6f,lloyd,3 months ago,Tue Feb 18 11:55:20 2020 +0000,potentially fixed bullet killing player on fire,
+40d5d48,Piotr Szulc,3 months ago,Tue Feb 18 11:27:34 2020 +0000,Merge branch 'v0.41' of https://github.com/BaconLetale/thirteen-brain-cells into v0.41,
+6afc3d6,Piotr Szulc,3 months ago,Tue Feb 18 11:27:21 2020 +0000,Update Spawners.cs,
+e03d822,BaconLetale,3 months ago,Tue Feb 18 11:23:00 2020 +0000,Delete settings.json,
+61ddcd5,Piotr Szulc,3 months ago,Tue Feb 18 11:13:02 2020 +0000,Update Score.cs,
+abcac19,lloyd,3 months ago,Tue Feb 18 10:25:05 2020 +0000,Added score to UI Element,
+8df50ea,lloyd,3 months ago,Mon Feb 17 17:51:36 2020 +0000,score n stuff,
+dc78826,Piotr Szulc,3 months ago,Mon Feb 17 17:40:59 2020 +0000,Fixed PlayerHealth script,
+27199ca,Piotr Szulc,3 months ago,Mon Feb 17 17:39:16 2020 +0000,Merge branch 'master' of https://github.com/BaconLetale/thirteen-brain-cells,
+e1c34fd,Piotr Szulc,3 months ago,Mon Feb 17 17:36:51 2020 +0000,Added score and wave counter,
+d37b1c7,lloyd,3 months ago,Mon Feb 17 17:05:05 2020 +0000,..,
+3eec0bc,Piotr Szulc,3 months ago,Mon Feb 17 16:38:19 2020 +0000,Added the ability to move while frozen,
+55d6719,Piotr Szulc,3 months ago,Mon Feb 17 15:59:38 2020 +0000,Merge branch 'v0.4',
+bf7ba18,Piotr Szulc,3 months ago,Mon Feb 17 15:59:09 2020 +0000,Add game freeze functionality,
+c036743,penloy,3 months ago,Mon Feb 17 15:43:09 2020 +0000,Merge pull request #24 from BaconLetale/v0.4,V0.4
+9ff558d,lloyd,3 months ago,Mon Feb 17 15:42:47 2020 +0000,removed vscode file,
+e8761b8,lloyd,3 months ago,Mon Feb 17 15:40:32 2020 +0000,test,
+6507949,lloyd,3 months ago,Mon Feb 17 15:37:52 2020 +0000,deleted everything,
+0c8a7f8,Piotr Szulc,3 months ago,Mon Feb 17 15:21:51 2020 +0000,Added fly cam,
+f656b4a,Piotr Szulc,3 months ago,Mon Feb 17 15:01:51 2020 +0000,Added free fly cam,
+46524f9,lloyd,3 months ago,Mon Feb 17 14:37:51 2020 +0000,some comments,
+2b231fb,lloyd,3 months ago,Mon Feb 17 12:34:03 2020 +0000,Added second camera, V and L hotkeys,
+7e1cac2,lloyd,3 months ago,Mon Feb 17 11:21:53 2020 +0000,can exit with escape,
+cc17227,lloyd,3 months ago,Mon Feb 17 11:11:22 2020 +0000,Fixed menu and a few other things,
+eb85ef9,penloy,3 months ago,Sun Feb 16 23:15:09 2020 +0000,Enemy no longer fires before aiming at player,
+c126fd1,penloy,3 months ago,Sun Feb 16 22:46:14 2020 +0000,Fixed friendly fire and enemies spawning at same position,
+4e405c3,lloyd,3 months ago,Fri Feb 14 14:48:52 2020 +0000,cleaned up bunch of scripts from Lewis,
+d94edc5,lloyd,3 months ago,Fri Feb 14 10:55:57 2020 +0000,Sounds, sand, and seriously supple scenery,
+d72aadd,lloyd,3 months ago,Tue Feb 11 15:34:21 2020 +0000,main menu partially working,
+460b17e,lloyd,3 months ago,Tue Feb 11 14:40:55 2020 +0000,full scene with effects,
+52136c9,penloy,3 months ago,Tue Feb 11 10:54:20 2020 +0000,Merge pull request #22 from BaconLetale/v0.38,V0.38
+51be4c5,lloyd,3 months ago,Tue Feb 11 10:52:08 2020 +0000,Added audio, door animation, flashing lights, etc...,
+c6e4c39,lloyd,3 months ago,Tue Feb 4 13:59:17 2020 +0000,Added spawn points which use Louis algorithm (No numEntrances yet),
+50578d8,Lloyd Scott,3 months ago,Tue Feb 4 09:36:50 2020 +0000,Added spawners,
+671a476,lloyd,3 months ago,Mon Feb 3 16:12:40 2020 +0000,line of site,
+621c836,BaconLetale,3 months ago,Fri Jan 31 19:54:39 2020 +0000,Merge pull request #21 from BaconLetale/v0.35,V0.35
+73d5466,Lloyd Scott,3 months ago,Fri Jan 31 19:53:30 2020 +0000,fixed tank pos,
+54bbe72,Piotr Szulc,3 months ago,Fri Jan 31 14:07:47 2020 +0000,Fixed falling, moved timer script,
+8a8f9d9,lloyd,3 months ago,Fri Jan 31 13:14:00 2020 +0000,added sum fixes,
+9ab6d7a,penloy,3 months ago,Fri Jan 31 11:25:57 2020 +0000,Merge pull request #20 from BaconLetale/v0.35,V0.35
+75f78c8,lloyd,3 months ago,Fri Jan 31 11:15:57 2020 +0000,added sum fixes,
+5535484,lloyd,3 months ago,Fri Jan 31 10:54:59 2020 +0000,added second map,
+7217d2b,penloy,3 months ago,Fri Jan 31 10:11:14 2020 +0000,Merge pull request #19 from BaconLetale/v0.35,better npccontroller script
+6941cf9,lloyd,3 months ago,Fri Jan 31 10:10:09 2020 +0000,better npccontroller script,
+7a1c863,penloy,3 months ago,Thu Jan 30 16:13:39 2020 +0000,Merge pull request #18 from BaconLetale/v0.35,removed useless script and added fire rate back for player
+b6c6e5d,Lloyd Scott,3 months ago,Thu Jan 30 16:11:59 2020 +0000,removed useless script and added fire rate back for player,
+b79f221,penloy,3 months ago,Thu Jan 30 15:25:33 2020 +0000,Merge pull request #17 from BaconLetale/v0.35,V0.35
+a8e034f,Lloyd Scott,3 months ago,Thu Jan 30 15:21:45 2020 +0000,Beautiful Comments,
+1e57a41,Lloyd Scott,3 months ago,Thu Jan 30 13:17:28 2020 +0000,field of view and everything,
+f4baff3,BaconLetale,4 months ago,Wed Jan 29 15:35:30 2020 +0000,Merge pull request #16 from BaconLetale/v0.36,Added a timer counting up, improved constantMovement
+0723c3f,BaconLetale,4 months ago,Wed Jan 29 15:34:44 2020 +0000,Merge pull request #15 from BaconLetale/v0.35,V0.35
+b5b56f0,lloyd,4 months ago,Tue Jan 28 15:23:58 2020 +0000,Commit to 0.35,
+c6d3284,Piotr Szulc,4 months ago,Tue Jan 28 15:19:43 2020 +0000,Added a timer counting up, improved constantMovement,
+d88df3f,lloyd,4 months ago,Tue Jan 28 13:02:39 2020 +0000,committing v0.35 update,
+a47df84,lloyd,4 months ago,Tue Jan 28 11:44:22 2020 +0000,fixed version with working npc raytrace not see through walls code,
+d5d51ca,Jodie,4 months ago,Tue Jan 28 10:35:04 2020 +0000,raycasting to npc bullets,
+dd76dc0,Lloyd Scott,4 months ago,Tue Jan 28 08:59:03 2020 +0000,Added field of view, NPC cannot see player behind walls now,
+152f2d4,BaconLetale,4 months ago,Mon Jan 27 14:55:39 2020 +0000,Merge pull request #14 from BaconLetale/v0.34,Added timer, cleaned up ConstMovement
+19ccdf8,BaconLetale,4 months ago,Mon Jan 27 14:55:11 2020 +0000,Merge pull request #13 from BaconLetale/v0.33,Added new movement type
+99abdb9,Piotr Szulc,4 months ago,Mon Jan 27 14:47:58 2020 +0000,Added timer, cleaned up ConstMovement,Timer scrip added to assets. Place it on player to ensure valid properties.
+
+Removed redundant variables from ConstantMovement.
+
+74ce8b4,penloy,4 months ago,Mon Jan 27 13:56:54 2020 +0000,Merge pull request #12 from BaconLetale/v0.32,Fixed issue with enemy not firing
+cc745f9,lloyd,4 months ago,Mon Jan 27 13:55:51 2020 +0000,Fixed issue with enemy not firing,
+ce5e68c,penloy,4 months ago,Mon Jan 27 13:37:24 2020 +0000,Merge pull request #11 from BaconLetale/v0.32,V0.32
+1ff8629,lloyd,4 months ago,Mon Jan 27 13:34:52 2020 +0000,Added gun rotation for enemy, changed map etc...,
+4ede94b,Piotr Szulc,4 months ago,Mon Jan 27 13:05:35 2020 +0000,Added new movement type,Constant movement uses fixed acceleration to move the tank.
+
+2a979a3,lloyd,4 months ago,Mon Jan 27 12:07:05 2020 +0000,for jodie,
+acb146a,BaconLetale,4 months ago,Mon Jan 27 11:28:46 2020 +0000,Merge pull request #10 from BaconLetale/v0.32,Added new tank models, textured floor, etc...
+00c8d49,Lloyd Scott,4 months ago,Tue Jan 21 19:07:17 2020 +0000,Added new tank models, textured floor, etc...,
+1f27949,BaconLetale,4 months ago,Tue Jan 21 15:00:51 2020 +0000,Merge pull request #9 from BaconLetale/0.31.2,Update PlayerMovement.cs
+6abe1a2,BaconLetale,4 months ago,Tue Jan 21 15:00:25 2020 +0000,Merge pull request #8 from BaconLetale/v0.31,V0.31
+d50a26a,Piotr Szulc,4 months ago,Tue Jan 21 14:59:18 2020 +0000,Update PlayerMovement.cs,Updated tank rotation
+
+30585bb,lloyd,4 months ago,Tue Jan 21 14:57:04 2020 +0000,Fixed Pathfinding and fixed issues with player dying breaking game,
+827a8d8,lloyd,4 months ago,Tue Jan 21 12:48:26 2020 +0000,Added patrol for NPC AI,
+a8ec050,Lloyd Scott,4 months ago,Tue Jan 21 09:48:14 2020 +0000,npc follows player,
+1dfcd76,penloy,4 months ago,Fri Jan 17 12:59:44 2020 +0000,Merge pull request #7 from BaconLetale/v0.301,Hitboxes
+7152bd8,penloy,4 months ago,Fri Jan 17 12:59:34 2020 +0000,Merge branch 'master' into v0.301,
+cec7343,BaconLetale,4 months ago,Fri Jan 17 12:57:55 2020 +0000,Merge pull request #6 from BaconLetale/v0.3,Finalized tank movement
+89de44c,lloyd,4 months ago,Fri Jan 17 12:54:20 2020 +0000,Hitboxes,
+97ee441,Piotr Szulc,4 months ago,Fri Jan 17 12:53:25 2020 +0000,Finalized tank movement,
+fb1355d,BaconLetale,4 months ago,Fri Jan 17 11:32:05 2020 +0000,Merge pull request #5 from BaconLetale/v0.26,V0.26
+2ff90d5,BaconLetale,4 months ago,Fri Jan 17 11:31:55 2020 +0000,Merge branch 'master' into v0.26,
+3b76b0f,penloy,4 months ago,Fri Jan 17 11:27:44 2020 +0000,Merge pull request #4 from BaconLetale/v0.25,V0.25
+bd5b28b,Lloyd Scott,4 months ago,Fri Jan 17 09:36:46 2020 +0000,Better collision, health, NPCs, death,
+4a2e8e0,Lloyd Scott,4 months ago,Thu Jan 16 21:20:20 2020 +0000,Added collision detection for the map,
+05c6650,Lloyd Scott,4 months ago,Thu Jan 16 20:30:06 2020 +0000,#36g564[complete] Added Pew Pew stuff,
+74c68c4,BaconLetale,4 months ago,Thu Jan 16 18:40:26 2020 +0000,Merge branch 'master' into v0.26,
+acf43e0,BaconLetale,4 months ago,Thu Jan 16 18:30:54 2020 +0000,#34kfrj Better velocity control,+Added a function Deleration()
+    _It slows down the tank when not holding W/S
++Fixed/Added some comments for clarity
+-/+ Slightly modified RotateCharacter(), can turn faster
+
+2e4cead,Lloyd Scott,4 months ago,Thu Jan 16 16:59:43 2020 +0000,added comments and cleaned some code#,
+2ba43bc,Lloyd Scott,4 months ago,Thu Jan 16 16:13:55 2020 +0000,added raycast shooting,
+5b0e958,BaconLetale,4 months ago,Thu Jan 16 16:12:10 2020 +0000,Changed asset serialization to "Force Text",
+c5b7778,Lloyd Scott,4 months ago,Wed Jan 15 23:29:05 2020 +0000,Finished Movement,
+a4d60a4,Lloyd Scott,4 months ago,Wed Jan 15 23:25:01 2020 +0000,removed test,
+6223662,Lloyd Scott,4 months ago,Wed Jan 15 23:22:36 2020 +0000,#36g58g[complete] testing,
+673fe91,Lloyd Scott,4 months ago,Wed Jan 15 23:09:47 2020 +0000,added controls for top of tank etc...,
+630d52e,penloy,4 months ago,Wed Jan 15 20:40:18 2020 +0000,Merge pull request #2 from BaconLetale/v0.2,First commit to v0.2 Movement
+833f494,lloyd,4 months ago,Tue Jan 14 15:28:17 2020 +0000,First commit to v0.2 Movement,
+91139b6,penloy,4 months ago,Tue Jan 14 11:30:41 2020 +0000,Merge pull request #1 from BaconLetale/v0.1,First commit to v0.1 from Lloyd
+ad87c3d,lloyd,4 months ago,Tue Jan 14 11:24:43 2020 +0000,First commit to v1.0 from Lloyd,
+8245bab,lloyd,4 months ago,Tue Jan 14 10:54:01 2020 +0000,empty project,
+bab9cd4,penloy,4 months ago,Tue Jan 14 10:13:46 2020 +0000,Create test.txt,committing tst file
+a94283f,Lloyd Scott,4 months ago,Tue Jan 14 09:33:29 2020 +0000,Added couple of scripts and simple scene,
+3ec7e00,Lloyd Scott,4 months ago,Tue Jan 14 09:07:29 2020 +0000,First Commit,
+72605fe,BaconLetale,4 months ago,Mon Jan 13 11:55:26 2020 +0000,Initial commit,
